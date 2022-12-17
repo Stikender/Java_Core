@@ -9,17 +9,17 @@ public class Human {
       if (yearOfBirth <= 0){
           this.yearOfBirth = Math.abs(yearOfBirth);
       }
-      if (name == null) {
+      if (name == null || name.isEmpty() || name.isBlank()) {
           this.name = "Информация не указана";
       } else {
           this.name = name;
       }
-      if (town == null) {
+      if (town == null || town.isEmpty() || town.isBlank()) {
           this.town = "Информация не указана";
       } else {
           this.town = town;
       }
-      if (jobTitle == null) {
+      if (jobTitle == null || jobTitle.isEmpty() || jobTitle.isBlank()) {
           this.jobTitle = "Информация не указана";
       } else {
           this.jobTitle = jobTitle;
