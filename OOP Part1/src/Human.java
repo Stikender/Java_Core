@@ -25,7 +25,7 @@ public class Human {
 
     public void setYearOfBirth(int yearOfBirth) {
         if (yearOfBirth <= 0){
-            this.yearOfBirth = Math.abs(yearOfBirth);
+            this.yearOfBirth = 0;
         } else {
         this.yearOfBirth = yearOfBirth;}
     }
