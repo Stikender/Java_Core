@@ -20,7 +20,7 @@ public class Main {
                 gipsofila
         );
 
-        Car lada = new Car("Lada", "Granta", 1.6, "желтый", 2020, "Россия", "Автоматическая", "универсал", "А365АБ777", 5,false);
+        Car lada = new Car("Lada", "Granta", 1.6, "желтый", 2020, "Россия", "Автоматическая", "универсал", "А365АБ777", 5,false, null, null);
         System.out.println(lada);
     }
 
