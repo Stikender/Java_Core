@@ -1,5 +1,6 @@
 import transport.Car;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 
 public class Main {
@@ -20,7 +21,9 @@ public class Main {
                 gipsofila
         );
 
-        Car lada = new Car("Lada", "Granta", 1.6, "желтый", 2020, "Россия", "Автоматическая", "универсал", "А365АБ777", 5,false, null, null);
+        Car lada = new Car("Lada", "Granta", 1.6, "желтый", 2020, "Россия",
+                "Автоматическая", "универсал", "А365АБ777", 5,false,
+                new Car.Key(false,true), new Car.Insurance(LocalDate.now(), 5000, "2555666952"));
         System.out.println(lada);
     }
 

@@ -33,11 +33,11 @@ public class Main {
 
 
         System.out.println(lada);
-        System.out.println(audi);
-        System.out.println(bMW);
-        System.out.println(kia);
-        System.out.println(hyundai);
-        System.out.println(mercedes);
+//        System.out.println(audi);
+//        System.out.println(bMW);
+//        System.out.println(kia);
+//        System.out.println(hyundai);
+//        System.out.println(mercedes);
 
     }
 }

@@ -196,9 +196,9 @@ public class Car {
                 ", " + (isTires() ? "летняя резина" : "зимняя резина") +
                 ", " + (getKey().isRemoteEngineStart() ? "без ключевой доступ" : "нужны ключи") +
         ", " + (getKey().isRemoteEngineStart() ? "удаленный запуск" : "обычный запуск") +
-                ", номер страховки" + getInsurance(new Insurance(LocalDate.now(), 30_000, "00999999")).getNumber() +
-                ", стоимость страховки" + getInsurance(new Insurance(LocalDate.now(), 30_000, "00999999")).getPrice() +
-                ", срок действия страховки" + getInsurance(new Insurance(LocalDate.now(), 30_000, "00999999")).getValidity();
+                ", номер страховки " + getInsurance(new Insurance(LocalDate.now(), 30_000, "00999999")).getNumber() +
+                ", стоимость страховки " + getInsurance(new Insurance(LocalDate.now(), 30_000, "00999999")).getPrice() +
+                ", срок действия страховки " + getInsurance(new Insurance(LocalDate.now(), 30_000, "00999999")).getValidity();
     }
 
 public static class Key {
@@ -231,17 +231,14 @@ public static class Key {
             this.validity = LocalDate.now().plusDays(365);
         } else {
             this.validity = validity;}
-        if (price <0 ) {
-            this.price = 10_000;
-        } else {
-            this.price = price;}
+            this.price = price;
         if (number == null || number.isEmpty() || number.isBlank()) {
             this.number = "123456789";
         } else {
             this.number = number;}
     }
         public Insurance() {
-            this(null, 10_000, null);
+            this(null, 0, null);
         }
 
     public LocalDate getValidity() {   return validity;  }
