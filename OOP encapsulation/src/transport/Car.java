@@ -2,14 +2,9 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car {
+public class Car extends Transport {
 
-    private final String brand;
-    private final String model;
     private double engineVolume;
-    private String color;
-    private final int year;
-    private final String country;
     private String transmission;
     private String bodyType;
     private String registrationNumber;
@@ -19,72 +14,18 @@ public class Car {
     private Insurance insurance;
 
 
-    public Car(String brand, String model, double engineVolume, String color, int year, String country) {
-        if (brand == null || brand.isEmpty() || brand.isBlank()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null || model.isEmpty() || model.isBlank()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-        if (Double.compare(engineVolume, 0) == 0) {
-            this.engineVolume = 1.5;
-        } else {
-            this.engineVolume = engineVolume;
-        }
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-        if (year <= 0) {
-            this.year = 2000;
-        } else {
-            this.year = year;
-        }
-        if (country == null || country.isEmpty() || country.isBlank()) {
-            this.country = "default";
-        } else {
-            this.country = country;
-        }
-        new Key();
-        new Insurance();
-
+    public Car(String brand, String model,  String color, int year, String country, double engineVolume) {
+        this(brand, model, color, year, country, engineVolume);
+//        new Key();
+//        new Insurance();
     }
-    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission,
+    public Car(String brand, String model, String color, int year, String country, double engineVolume, int maxSpeed, String transmission,
                String bodyType, String registrationNumber, int numberOfSeats, boolean tires, Key key, Insurance insurance) {
-        if (brand == null || brand.isEmpty() || brand.isBlank()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null || model.isEmpty() || model.isBlank()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
+        super(brand, model, color, year, country, maxSpeed);
         if (Double.compare(engineVolume, 0) == 0) {
             this.engineVolume = 1.5;
         } else {
             this.engineVolume = engineVolume;
-        }
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-        if (year <= 0) {
-            this.year = 2000;
-        } else {
-            this.year = year;
-        }
-        if (country == null || country.isEmpty() || country.isBlank()) {
-            this.country = "default";
-        } else {
-            this.country = country;
         }
         if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
             this.transmission = "МКПП";
@@ -113,14 +54,6 @@ public class Car {
             this.insurance = insurance; }
     }
 
-    public String getBrand() { return brand; }
-
-    public String getModel() { return model; }
-
-    public int getYear() { return year; }
-
-    public String getCountry() { return country; }
-
     public String getBodyType() { return bodyType; }
 
     public int getNumberOfSeats() { return numberOfSeats; }
@@ -131,10 +64,6 @@ public class Car {
         this.engineVolume = engineVolume;
     }
 
-    public String getColor() { return color; }
-    public void setColor(String color) {
-        this.color = color;
-    }
     public String getTransmission() { return transmission; }
 
     public void setTransmission(String transmission) {

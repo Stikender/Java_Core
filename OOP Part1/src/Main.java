@@ -18,17 +18,17 @@ public class Main {
         System.out.println(vladimir);
         System.out.println("Exercise 1.3");
 
-        Car lada = new Car("Lada", "Granta", 1.7, "желтый", 2015, "Россия", "автомат", null, null, -5, false, null, null);
+        Car lada = new Car("Lada", "Granta", "желтый", 2015, "Россия", 1.7, 200,"автомат", null, null, -5, false, null, null);
         lada.setKey(new Car.Key(false,false));
         lada.getInsurance(new Car.Insurance(LocalDate.now(), 30_000, "00999999"));
 //        lada.getInsurance().checkValidity();
 //        lada.getInsurance().checkNumber();
 
-        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, "черный", 2020, "Германия");
-        Car bMW = new Car("BMW", "Z8", 3.0, "черный", 2021, "Германия");
-        Car kia = new Car("Kia", "Sportage", 2.4, "красный", 2018, "Южная корея");
-        Car hyundai = new Car("Hyundai", "Avante", 1.6, "оранжевый", 2016, "Южная корея");
-        Car mercedes = new Car("Mercedes", "C500", 3.5, "черный", 2019, "Германия",
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", "черный", 2020, "Германия", 3.0);
+        Car bMW = new Car("BMW", "Z8", "черный", 2021, "Германия", 3.0);
+        Car kia = new Car("Kia", "Sportage", "красный", 2018, "Южная корея", 2.4);
+        Car hyundai = new Car("Hyundai", "Avante", "оранжевый", 2016, "Южная корея", 1.6);
+        Car mercedes = new Car("Mercedes", "C500", "черный", 2019, "Германия", 3.5, 250,
                 "автомат", "седан", "а780ав777", 5, true,null, null);
 
 
