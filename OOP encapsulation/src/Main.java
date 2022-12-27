@@ -1,5 +1,10 @@
+import Driver.Driver;
+import Driver.DriverCategoryB;
+import Driver.DriverCategoryC;
+import Driver.DriverCategoryD;
 import transport.Bus;
 import transport.Car;
+import transport.Truck;
 
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -21,19 +26,62 @@ public class Main {
 //                khrizantema, khrizantema, khrizantema, khrizantema,khrizantema,
 //                gipsofila
 //        );
+//
+//        Car lada = new Car("Lada", "Granta", "желтый", 2020, "Россия",
+//                1.6,  180, "Автоматическая", "универсал", "А365АБ777", 5,false,
+//                new Car.Key(false,true), new Car.Insurance(LocalDate.now(), 5000, "2555666952"));
+//        System.out.println(lada);
 
-        Car lada = new Car("Lada", "Granta", "желтый", 2020, "Россия",
-                1.6,  180, "Автоматическая", "универсал", "А365АБ777", 5,false,
-                new Car.Key(false,true), new Car.Insurance(LocalDate.now(), 5000, "2555666952"));
-        System.out.println(lada);
+//        Bus bus1 = new Bus("Asia", "Combi", "red", 2020, "South Korea", 120, 16);
+//        Bus bus2 = new Bus("Asia", "Cosmos", "yellow", 2015, "South Korea", 120, 32);
+//        Bus bus3 = new Bus("ПАЗ", "4234", null, 2016, "Россия", 100, 18);
 
-        Bus bus1 = new Bus("Asia", "Combi", "red", 2020, "South Korea", 120, 16);
-        Bus bus2 = new Bus("Asia", "Cosmos", "yellow", 2015, "South Korea", 120, 32);
-        Bus bus3 = new Bus("ПАЗ", "4234", null, 2016, "Россия", 100, 18);
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0);
+        Car bMW = new Car("BMW", "Z8", 3.0);
+        Car kia = new Car("Kia", "Sportage", 2.4);
+        Car hyundai = new Car("Hyundai", "Avante", 1.6);
+        System.out.println(audi);
+        System.out.println(bMW);
+        System.out.println(kia);
+        System.out.println(hyundai);
+        audi.bestLapTime();
+        Driver<Car> driverCategoryB1 = new Driver<>("Петров Николай Иванович", "имеется", 10, audi);
+        Driver<Car> driverCategoryB2 = new Driver<>("Сидоров Мамай Игнатович", "имеется", 15, bMW);
+        Driver<Car> driverCategoryB3 = new Driver<>("Петров Григорий Константинович", "имеется", 5, kia);
+        Driver<Car> driverCategoryB4 = new Driver<>("Ткаченко Альберт Владимирович", "имеется", 12, hyundai);
+        System.out.println(driverCategoryB1);
+        System.out.println(driverCategoryB2);
+        System.out.println(driverCategoryB3);
+        System.out.println(driverCategoryB4);
+
+        Bus bus1 = new Bus("Asia", "Combi", 3.6);
+        Bus bus2 = new Bus("Asia", "Cosmos", 3.5);
+        Bus bus3 = new Bus("ПАЗ", "4234", 3.0);
+        Bus bus4 = new Bus("Вектор", "Next", 4.4);
 
         System.out.println(bus1);
         System.out.println(bus2);
         System.out.println(bus3);
+        System.out.println(bus4);
+        Driver<Bus> driverCategoryD1 = new Driver<>("Мусинов Иван Давыдович", "имеется", 2, bus1);
+        Driver<Bus> driverCategoryD2 = new Driver<>("Печной Леонид Петрович", "имеется", 7, bus2);
+        Driver<Bus> driverCategoryD3 = new Driver<>("Пеньков Василий Львович", "имеется", 17, bus3);
+        Driver<Bus> driverCategoryD4 = new Driver<>("Васильев Владимир Владимирович", "имеется", 7, bus4);
+        System.out.println(driverCategoryD1);
+        System.out.println(driverCategoryD2);
+        System.out.println(driverCategoryD3);
+        System.out.println(driverCategoryD4);
+
+        Truck truck1 = new Truck("Shacman", "SX3318", 10.8);
+        Truck truck2 = new Truck("Volvo", "FL", 7.0);
+        Truck truck3 = new Truck("Hyundai", "HD78", 3.9);
+        Truck truck4 = new Truck("КамАЗ", "45143", 6.7);
+        System.out.println(truck1);
+        System.out.println(truck2);
+        System.out.println(truck3);
+        System.out.println(truck4);
+        Driver<Truck> driverCategoryC1 = new Driver<>("Пучков Мирон Игнатьевич", "имеется", 20, truck1);
+        System.out.println(driverCategoryC1);
     }
 
 //    private static void printInfoFlower(Flower flower) {
