@@ -1,16 +1,27 @@
 package transport;
 
 public class Bus extends Transport{
-    public Bus(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+
+    LoadLimit loadLimit;
+
+//    UpperLoadLimit upperLoadLimit;
+
+    public enum LoadLimit {
+        LOWER_LOAD_LIMIT,
+        UPPER_LOAD_LIMIT
     }
 
-//    @Override
-//    public String toString() {
-//        return "Автобус: " + getBrand() +
-//                " " + getModel() +
-//                ", объем двигателя — " + getEngineVolume ();
-//    }
+    public Bus(String brand, String model, double engineVolume, LoadLimit loadLimit) {
+        super(brand, model, engineVolume);
+        this.loadLimit = loadLimit;
+    }
+
+    @Override
+    public String toString() {
+        return "Автобус: " + getBrand() +
+                " " + getModel() +
+                ", объем двигателя — " + getEngineVolume ();
+    }
 
     public void startMoving() {
         System.out.println("Вставляем ключ в замок зажигания");
@@ -25,7 +36,13 @@ public class Bus extends Transport{
         super.stopMoving();
     }
 
+    public LoadLimit getLoadLimit() {
+        return loadLimit;
+    }
 
+    public void setLoadLimit(LoadLimit loadLimit) {
+        this.loadLimit = loadLimit;
+    }
     //    private int numberOfSeats;
 //
 //    public Bus(String brand, String model, String color, int year, String country, double maxSpeed, int numberOfSeats) {

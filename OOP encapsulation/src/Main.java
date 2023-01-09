@@ -4,10 +4,13 @@ import Driver.DriverCategoryC;
 import Driver.DriverCategoryD;
 import transport.Bus;
 import transport.Car;
+import transport.Transport;
 import transport.Truck;
 
 import java.time.LocalDate;
 import java.util.Calendar;
+
+import static transport.Car.BodyType.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,10 +39,11 @@ public class Main {
 //        Bus bus2 = new Bus("Asia", "Cosmos", "yellow", 2015, "South Korea", 120, 32);
 //        Bus bus3 = new Bus("ПАЗ", "4234", null, 2016, "Россия", 100, 18);
 
-        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0);
-        Car bMW = new Car("BMW", "Z8", 3.0);
-        Car kia = new Car("Kia", "Sportage", 2.4);
-        Car hyundai = new Car("Hyundai", "Avante", 1.6);
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, СЕДАН);
+        Car bMW = new Car("BMW", "Z8", 3.0, КРОССОВЕР);
+        Car kia = new Car("Kia", "Sportage", 2.4, ХЕТЧБЕК);
+        Car hyundai = new Car("Hyundai", "Avante", 1.6, МИНИВЭН);
+
         System.out.println(audi);
         System.out.println(bMW);
         System.out.println(kia);

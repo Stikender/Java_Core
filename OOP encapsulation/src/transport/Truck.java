@@ -5,12 +5,12 @@ public class Truck extends Transport{
         super(brand, model, engineVolume);
     }
 
-//    @Override
-//    public String toString() {
-//        return "Грузовой автомобиль: " + getBrand() +
-//                " " + getModel() +
-//                ", объем двигателя — " + getEngineVolume ();
-//    }
+    @Override
+    public String toString() {
+        return "Грузовой автомобиль: " + getBrand() +
+                " " + getModel() +
+                ", объем двигателя — " + getEngineVolume ();
+    }
 
     public void startMoving() {
         System.out.println("Проверка груза");

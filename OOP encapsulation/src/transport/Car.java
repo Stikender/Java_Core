@@ -1,20 +1,47 @@
 package transport;
 
-import Driver.DriverCategoryB;
+import java.util.Objects;
 
 public class Car extends Transport implements Competing{
-    public Car(String brand, String model, double engineVolume) {
+
+    BodyType bodyType;
+
+    public enum BodyType {
+        СЕДАН,
+        ХЕТЧБЕК,
+        КУПЕ,
+        УНИВЕРСАЛ,
+        ВНЕДОРОЖНИК,
+        КРОССОВЕР,
+        ПИКАП,
+        ФУРГОН,
+        МИНИВЭН
+    }
+    public Car(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;
+    }
+    @Override
+    public String toString() {
+        return "Легковой автомобиль: " + getBrand() +
+                " " + getModel() +
+                ", объем двигателя — " + getEngineVolume() +
+                ", тип кузова: " + getBodyType();
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car)) return false;
+        if (!super.equals(o)) return false;
+        Car car = (Car) o;
+        return getBodyType() == car.getBodyType();
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getBodyType());
     }
 
-//    @Override
-//    public String toString() {
-//        return "Легковой автомобиль: " + getBrand() +
-//                " " + getModel() +
-//                ", объем двигателя — " + getEngineVolume ();
-//    }
-
-       public void startMoving() {
+    public void startMoving() {
         System.out.println("Вставляем ключ в замок зажигания");
         System.out.println("Заводим автомобиль");
         System.out.println("Включаем скорость, жмем педаль газа");
@@ -26,6 +53,13 @@ public class Car extends Transport implements Competing{
         super.stopMoving();
     }
 
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
 //    @Override
 //    public String[] pitStop() {
 //        return super.pitStop();
