@@ -2,25 +2,67 @@ package transport;
 
 public class Bus extends Transport{
 
-    LoadLimit loadLimit;
+    NumberOfSeats numberOfSeats;
+    VehicleType vehicleType;
 
-//    UpperLoadLimit upperLoadLimit;
+    public enum NumberOfSeats {
+        ОСОБО_МАЛАЯ(null,10),
+        МАЛАЯ(10,25),
+        СРЕДНЯЯ(40,50),
+        БОЛЬШАЯ(60,80),
+        ОСОБО_БОЛЬШАЯ(100,120);
 
-    public enum LoadLimit {
-        LOWER_LOAD_LIMIT,
-        UPPER_LOAD_LIMIT
+        private Integer minNumberOfSeats;
+        private Integer maxNumberOfSeats;
+
+        NumberOfSeats(Integer minNumberOfSeats, Integer maxNumberOfSeats) {
+            this.minNumberOfSeats = minNumberOfSeats;
+            this.maxNumberOfSeats = maxNumberOfSeats;
+        }
+
+        public Integer getMinNumberOfSeats() {
+            if (minNumberOfSeats == null) {
+                System.out.println(", Вместимость автобуса до " + maxNumberOfSeats +" человек.");
+            }
+            return minNumberOfSeats;
+        }
+
+        public void setMinNumberOfSeats(Integer minNumberOfSeats) {
+            this.minNumberOfSeats = minNumberOfSeats;
+        }
+
+        public Integer getMaxNumberOfSeats() {
+            if (maxNumberOfSeats == null) {
+                System.out.println(", Вместимость автобуса от " + minNumberOfSeats + " человек.");
+            }
+            return maxNumberOfSeats;
+        }
+
+        public void setMaxNumberOfSeats(Integer maxNumberOfSeats) {
+            this.maxNumberOfSeats = maxNumberOfSeats;
+        }
+
+        @Override
+        public String toString() {
+            return ", Вместимость автобуса от " + minNumberOfSeats +
+                    " человек до " + maxNumberOfSeats +" человек.";
+        }
+    }
+    public enum VehicleType{
+        АВТОБУС
     }
 
-    public Bus(String brand, String model, double engineVolume, LoadLimit loadLimit) {
+    public Bus(String brand, String model, double engineVolume, NumberOfSeats numberOfSeats, VehicleType vehicleType) {
         super(brand, model, engineVolume);
-        this.loadLimit = loadLimit;
+        this.numberOfSeats = numberOfSeats;
+        this.vehicleType = vehicleType;
     }
-
     @Override
     public String toString() {
-        return "Автобус: " + getBrand() +
+        return "Тип: " + getVehicleType() +", " + getBrand() +
                 " " + getModel() +
-                ", объем двигателя — " + getEngineVolume ();
+                ", объем двигателя — " + getEngineVolume ()
+                + getNumberOfSeats();
     }
 
     public void startMoving() {
@@ -36,12 +78,30 @@ public class Bus extends Transport{
         super.stopMoving();
     }
 
-    public LoadLimit getLoadLimit() {
-        return loadLimit;
+    public NumberOfSeats getNumberOfSeats() {
+        if (numberOfSeats == null) {
+            System.out.println("Не корректное значение.");
+        }
+        return numberOfSeats;
     }
 
-    public void setLoadLimit(LoadLimit loadLimit) {
-        this.loadLimit = loadLimit;
+    public void setNumberOfSeats(NumberOfSeats numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
+    }
+
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+    public void printType() {
+        if (vehicleType == null) {
+            System.out.println("Данных по транспортному средству недостаточно.");}
+        else {
+            System.out.println("Тип траспорта: автобус");
+        }
     }
     //    private int numberOfSeats;
 //

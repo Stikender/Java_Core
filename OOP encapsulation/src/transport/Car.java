@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Car extends Transport implements Competing{
 
     BodyType bodyType;
+    VehicleType vehicleType;
 
     public enum BodyType {
         СЕДАН,
@@ -17,13 +18,17 @@ public class Car extends Transport implements Competing{
         ФУРГОН,
         МИНИВЭН
     }
-    public Car(String brand, String model, double engineVolume, BodyType bodyType) {
+    public enum VehicleType{
+        ЛЕГКОВОЙ_АВТОМОБИЛЬ
+    }
+    public Car(String brand, String model, double engineVolume, BodyType bodyType, VehicleType vehicleType) {
         super(brand, model, engineVolume);
         this.bodyType = bodyType;
+        this.vehicleType = vehicleType;
     }
     @Override
     public String toString() {
-        return "Легковой автомобиль: " + getBrand() +
+        return "Тип: "+ getVehicleType()+ ", " + getBrand() +
                 " " + getModel() +
                 ", объем двигателя — " + getEngineVolume() +
                 ", тип кузова: " + getBodyType();
@@ -60,7 +65,23 @@ public class Car extends Transport implements Competing{
     public void setBodyType(BodyType bodyType) {
         this.bodyType = bodyType;
     }
-//    @Override
+
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    public void printType() {
+        if (vehicleType == null) {
+            System.out.println("Данных по транспортному средству недостаточно.");}
+        else {
+            System.out.println("Тип траспорта: легковой транспорт.");
+        }
+    }
+    //    @Override
 //    public String[] pitStop() {
 //        return super.pitStop();
 //    }

@@ -2,7 +2,7 @@ package transport;
 
 import java.util.Objects;
 
-public class Transport implements Competing{
+public abstract class Transport implements Competing{
 
     private final String brand;
     private final String model;
@@ -123,6 +123,9 @@ public class Transport implements Competing{
     public void maxSpeed() {
         System.out.println("Вы самый быстрый!");
     }
+
+    public abstract void printType();
+
 
     //    public int getYear() {
 //        return year;
