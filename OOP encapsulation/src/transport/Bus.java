@@ -80,7 +80,7 @@ public class Bus extends Transport{
 
     public NumberOfSeats getNumberOfSeats() {
         if (numberOfSeats == null) {
-            System.out.println("Не корректное значение.");
+            System.out.println(" Не корректное значение.");
         }
         return numberOfSeats;
     }

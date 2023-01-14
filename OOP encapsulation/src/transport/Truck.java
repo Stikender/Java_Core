@@ -27,7 +27,7 @@ public class Truck extends Transport{
 
         public Float getLowerLoadLimit() {
             if (lowerLoadLimit == null) {
-                System.out.println("Грузоподъемность: до " + upperLoadLimit + " тонн.");
+                System.out.println(", Грузоподъемность: до " + upperLoadLimit + " тонн.");
             }
             return lowerLoadLimit;
         }
@@ -38,7 +38,7 @@ public class Truck extends Transport{
 
         public Float getUpperLoadLimit() {
             if (upperLoadLimit == null) {
-                System.out.println("Грузоподъемность: от " + lowerLoadLimit + " тонн.");
+                System.out.println(", Грузоподъемность: от " + lowerLoadLimit + " тонн.");
             }
             return upperLoadLimit;
         }
@@ -49,7 +49,7 @@ public class Truck extends Transport{
 
         @Override
         public String toString() {
-            return "Грузоподъемность: от " + getLowerLoadLimit() +
+            return ", Грузоподъемность: от " + getLowerLoadLimit() +
                     " тонн до " + getUpperLoadLimit() + " тонн.";
         }
     }
