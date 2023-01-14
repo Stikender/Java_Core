@@ -13,22 +13,11 @@ public class Truck extends Transport{
         private Float upperLoadLimit;
 
         LoadLimit(Float lowerLoadLimit, Float upperLoadLimit) {
-//            if (lowerLoadLimit == null) {
-//                System.out.println("Грузоподъемность: до " + upperLoadLimit + " тонн.");
-//            } else {
                 this.lowerLoadLimit = lowerLoadLimit;
-//            }
-//            if (upperLoadLimit == null) {
-//                System.out.println("Грузоподъемность: от "+ lowerLoadLimit +" тонн.");
-//            } else {
                 this.upperLoadLimit = upperLoadLimit;
-//            }
         }
 
         public Float getLowerLoadLimit() {
-            if (lowerLoadLimit == null) {
-                System.out.println(", Грузоподъемность: до " + upperLoadLimit + " тонн.");
-            }
             return lowerLoadLimit;
         }
 
@@ -37,9 +26,7 @@ public class Truck extends Transport{
         }
 
         public Float getUpperLoadLimit() {
-            if (upperLoadLimit == null) {
-                System.out.println(", Грузоподъемность: от " + lowerLoadLimit + " тонн.");
-            }
+
             return upperLoadLimit;
         }
 
@@ -49,8 +36,13 @@ public class Truck extends Transport{
 
         @Override
         public String toString() {
-            return ", Грузоподъемность: от " + getLowerLoadLimit() +
-                    " тонн до " + getUpperLoadLimit() + " тонн.";
+            if (lowerLoadLimit == null) {
+                return ", Грузоподъемность: до " + upperLoadLimit + " тонн.";
+            } else if (upperLoadLimit == null) {
+                return ", Грузоподъемность: от " + lowerLoadLimit + " тонн.";
+            } else
+            { return ", Грузоподъемность: от " + getLowerLoadLimit() +
+                    " тонн до " + getUpperLoadLimit() + " тонн.";}
         }
     }
     public enum VehicleType{
@@ -64,10 +56,16 @@ public class Truck extends Transport{
 
     @Override
     public String toString() {
+        if (loadLimit == null) {
+            return "Тип: " + getVehicleType()+ ", " + getBrand() +
+                    " " + getModel() +
+                    ", объем двигателя — " + getEngineVolume ()
+                    + " Не корректное значение";
+        } else {
         return "Тип: " + getVehicleType()+ ", " + getBrand() +
                 " " + getModel() +
                 ", объем двигателя — " + getEngineVolume ()
-                + getLoadLimit();
+                + getLoadLimit();}
     }
 
     public void startMoving() {
@@ -83,9 +81,6 @@ public class Truck extends Transport{
         super.stopMoving();
     }
     public LoadLimit getLoadLimit() {
-        if (loadLimit == null) {
-            System.out.println("Не корректное значение");
-        }
         return loadLimit;
     }
     public void setLoadLimit(LoadLimit loadLimit) {
@@ -105,5 +100,11 @@ public class Truck extends Transport{
         else {
             System.out.println("Тип траспорта: грузовой транспорт.");
         }
+    }
+
+    @Override
+    public void getDiagnosed() {
+        System.out.println("Вы проехали 10000 км, пора пройти диагностику");
+        super.getDiagnosed();
     }
 }

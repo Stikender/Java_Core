@@ -21,31 +21,29 @@ public class Bus extends Transport{
         }
 
         public Integer getMinNumberOfSeats() {
-            if (minNumberOfSeats == null) {
-                System.out.println(", Вместимость автобуса до " + maxNumberOfSeats +" человек.");
-            }
             return minNumberOfSeats;
         }
-
         public void setMinNumberOfSeats(Integer minNumberOfSeats) {
             this.minNumberOfSeats = minNumberOfSeats;
         }
-
         public Integer getMaxNumberOfSeats() {
-            if (maxNumberOfSeats == null) {
-                System.out.println(", Вместимость автобуса от " + minNumberOfSeats + " человек.");
-            }
             return maxNumberOfSeats;
         }
-
         public void setMaxNumberOfSeats(Integer maxNumberOfSeats) {
             this.maxNumberOfSeats = maxNumberOfSeats;
         }
 
         @Override
         public String toString() {
-            return ", Вместимость автобуса от " + minNumberOfSeats +
-                    " человек до " + maxNumberOfSeats +" человек.";
+            if (minNumberOfSeats == null) {
+               return ", Вместимость автобуса до " + maxNumberOfSeats +" человек.";
+            }
+            else if (maxNumberOfSeats == null) {
+                return ", Вместимость автобуса от " + minNumberOfSeats + " человек.";
+            } else {
+                return ", Вместимость автобуса от " + minNumberOfSeats +
+                        " человек до " + maxNumberOfSeats +" человек.";
+            }
         }
     }
     public enum VehicleType{
@@ -59,10 +57,16 @@ public class Bus extends Transport{
     }
     @Override
     public String toString() {
+        if (numberOfSeats == null) {
+            return "Тип: " + getVehicleType() +", " + getBrand() +
+                    " " + getModel() +
+                    ", объем двигателя — " + getEngineVolume ()
+                    + ". Не корректное значение.";
+        } else {
         return "Тип: " + getVehicleType() +", " + getBrand() +
                 " " + getModel() +
                 ", объем двигателя — " + getEngineVolume ()
-                + getNumberOfSeats();
+                + getNumberOfSeats();}
     }
 
     public void startMoving() {
@@ -79,9 +83,7 @@ public class Bus extends Transport{
     }
 
     public NumberOfSeats getNumberOfSeats() {
-        if (numberOfSeats == null) {
-            System.out.println(" Не корректное значение.");
-        }
+
         return numberOfSeats;
     }
 

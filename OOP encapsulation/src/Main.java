@@ -39,17 +39,17 @@ public class Main {
 //        Bus bus2 = new Bus("Asia", "Cosmos", "yellow", 2015, "South Korea", 120, 32);
 //        Bus bus3 = new Bus("ПАЗ", "4234", null, 2016, "Россия", 100, 18);
 //
-//        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, СЕДАН, null);
-//        Car bMW = new Car("BMW", "Z8", 3.0, КРОССОВЕР, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
-//        Car kia = new Car("Kia", "Sportage", 2.4, ХЕТЧБЕК, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
-//        Car hyundai = new Car("Hyundai", "Avante", 1.6, МИНИВЭН, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
-//
-//        System.out.println(audi);
-//        System.out.println(bMW);
-//        System.out.println(kia);
-//        System.out.println(hyundai);
-//        audi.printType();
-////        audi.bestLapTime();
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, СЕДАН, null);
+        Car bMW = new Car("BMW", "Z8", 3.0, КРОССОВЕР, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
+        Car kia = new Car("Kia", "Sportage", 2.4, ХЕТЧБЕК, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
+        Car hyundai = new Car("Hyundai", "Avante", 1.6, МИНИВЭН, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
+
+        System.out.println(audi);
+        System.out.println(bMW);
+        System.out.println(kia);
+        System.out.println(hyundai);
+        audi.printType();
+        audi.bestLapTime();
 //        Driver<Car> driverCategoryB1 = new Driver<>("Петров Николай Иванович", "имеется", 10, audi);
 //        Driver<Car> driverCategoryB2 = new Driver<>("Сидоров Мамай Игнатович", "имеется", 15, bMW);
 //        Driver<Car> driverCategoryB3 = new Driver<>("Петров Григорий Константинович", "имеется", 5, kia);
@@ -58,7 +58,6 @@ public class Main {
 //        System.out.println(driverCategoryB2);
 //        System.out.println(driverCategoryB3);
 //        System.out.println(driverCategoryB4);
-
         Bus bus1 = new Bus("Asia", "Combi", 3.6, Bus.NumberOfSeats.ОСОБО_МАЛАЯ, Bus.VehicleType.АВТОБУС);
         Bus bus2 = new Bus("Asia", "Cosmos", 3.5, Bus.NumberOfSeats.МАЛАЯ, Bus.VehicleType.АВТОБУС);
         Bus bus3 = new Bus("ПАЗ", "4234", 3.0, Bus.NumberOfSeats.БОЛЬШАЯ, Bus.VehicleType.АВТОБУС);
@@ -77,16 +76,16 @@ public class Main {
 //        System.out.println(driverCategoryD2);
 //        System.out.println(driverCategoryD3);
 //        System.out.println(driverCategoryD4);
-//
+
         Truck truck1 = new Truck("Shacman", "SX3318", 10.8, Truck.LoadLimit.N1, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
-//        Truck truck2 = new Truck("Volvo", "FL", 7.0, Truck.LoadLimit.N2, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
-//        Truck truck3 = new Truck("Hyundai", "HD78", 3.9, Truck.LoadLimit.N3, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
-//        Truck truck4 = new Truck("КамАЗ", "45143", 6.7, null, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
+        Truck truck2 = new Truck("Volvo", "FL", 7.0, Truck.LoadLimit.N2, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
+        Truck truck3 = new Truck("Hyundai", "HD78", 3.9, Truck.LoadLimit.N3, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
+        Truck truck4 = new Truck("КамАЗ", "45143", 6.7, null, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
         System.out.println(truck1);
-//        System.out.println(truck2);
-//        System.out.println(truck3);
-//        System.out.println(truck4);
-//        truck3.printType();
+        System.out.println(truck2);
+        System.out.println(truck3);
+        System.out.println(truck4);
+        truck3.printType();
 //        Driver<Truck> driverCategoryC1 = new Driver<>("Пучков Мирон Игнатьевич", "имеется", 20, truck1);
 //        System.out.println(driverCategoryC1);
     }

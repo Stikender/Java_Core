@@ -126,6 +126,9 @@ public abstract class Transport implements Competing{
 
     public abstract void printType();
 
+    public void getDiagnosed() {
+    }
+
 
     //    public int getYear() {
 //        return year;

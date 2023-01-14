@@ -28,10 +28,17 @@ public class Car extends Transport implements Competing{
     }
     @Override
     public String toString() {
-        return "Тип: "+ getVehicleType()+ ", " + getBrand() +
-                " " + getModel() +
-                ", объем двигателя — " + getEngineVolume() +
-                ", тип кузова: " + getBodyType();
+        if (vehicleType == null) {
+            return "Тип: Данных по транспортному средству недостаточно." + ", " + getBrand() +
+                    " " + getModel() +
+                    ", объем двигателя — " + getEngineVolume() +
+                    ", тип кузова: " + getBodyType();
+        } else {
+            return "Тип: "+ getVehicleType()+ ", " + getBrand() +
+                    " " + getModel() +
+                    ", объем двигателя — " + getEngineVolume() +
+                    ", тип кузова: " + getBodyType();
+        }
     }
     @Override
     public boolean equals(Object o) {
@@ -75,11 +82,12 @@ public class Car extends Transport implements Competing{
     }
 
     public void printType() {
-        if (vehicleType == null) {
-            System.out.println("Данных по транспортному средству недостаточно.");}
-        else {
-            System.out.println("Тип траспорта: легковой транспорт.");
-        }
+        System.out.println("Тип траспорта: легковой транспорт.");
+    }
+
+    @Override
+    public void getDiagnosed() {
+        System.out.println("Вы проехали 5000 км, пора пройти диагностику");
     }
     //    @Override
 //    public String[] pitStop() {
