@@ -104,7 +104,7 @@ public class Truck extends Transport{
 
     @Override
     public void getDiagnosed() {
-        System.out.println("Вы проехали 10000 км, пора пройти диагностику");
+        System.out.println("Вы проехали 7000 км, пора пройти диагностику");
         super.getDiagnosed();
     }
 }

@@ -50,11 +50,11 @@ public class Main {
         System.out.println(hyundai);
         audi.printType();
         audi.bestLapTime();
-//        Driver<Car> driverCategoryB1 = new Driver<>("Петров Николай Иванович", "имеется", 10, audi);
+        Driver<Car> driverCategoryB1 = new Driver<>("Петров Николай Иванович", "имеется", 10, audi);
 //        Driver<Car> driverCategoryB2 = new Driver<>("Сидоров Мамай Игнатович", "имеется", 15, bMW);
 //        Driver<Car> driverCategoryB3 = new Driver<>("Петров Григорий Константинович", "имеется", 5, kia);
 //        Driver<Car> driverCategoryB4 = new Driver<>("Ткаченко Альберт Владимирович", "имеется", 12, hyundai);
-//        System.out.println(driverCategoryB1);
+        System.out.println(driverCategoryB1);
 //        System.out.println(driverCategoryB2);
 //        System.out.println(driverCategoryB3);
 //        System.out.println(driverCategoryB4);
@@ -68,11 +68,11 @@ public class Main {
         System.out.println(bus3);
         System.out.println(bus4);
         bus1.printType();
-//        Driver<Bus> driverCategoryD1 = new Driver<>("Мусинов Иван Давыдович", "имеется", 2, bus1);
+        Driver<Bus> driverCategoryD1 = new Driver<>("Мусинов Иван Давыдович", "имеется", 2, bus1);
 //        Driver<Bus> driverCategoryD2 = new Driver<>("Печной Леонид Петрович", "имеется", 7, bus2);
 //        Driver<Bus> driverCategoryD3 = new Driver<>("Пеньков Василий Львович", "имеется", 17, bus3);
 //        Driver<Bus> driverCategoryD4 = new Driver<>("Васильев Владимир Владимирович", "имеется", 7, bus4);
-//        System.out.println(driverCategoryD1);
+        System.out.println(driverCategoryD1);
 //        System.out.println(driverCategoryD2);
 //        System.out.println(driverCategoryD3);
 //        System.out.println(driverCategoryD4);
@@ -86,8 +86,8 @@ public class Main {
         System.out.println(truck3);
         System.out.println(truck4);
         truck3.printType();
-//        Driver<Truck> driverCategoryC1 = new Driver<>("Пучков Мирон Игнатьевич", "имеется", 20, truck1);
-//        System.out.println(driverCategoryC1);
+        Driver<Truck> driverCategoryC1 = new Driver<>("Пучков Мирон Игнатьевич", "имеется", 20, truck1);
+        System.out.println(driverCategoryC1);
     }
 
 //    private static void printInfoFlower(Flower flower) {
