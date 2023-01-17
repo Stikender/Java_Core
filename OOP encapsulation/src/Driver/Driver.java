@@ -4,13 +4,38 @@ import transport.Transport;
 
 import java.util.Objects;
 
+import static Driver.Driver.DriverLicenseCategory.*;
+
 public class Driver <T extends Transport>{
     private String name;
     private String driverLicense;
     private int experience;
     private T vehicle;
+    DriverLicenseCategory driverLicenseCategory;
+    public enum DriverLicenseCategory {
+        DRIVER_LICENSE_CATEGORY_C("C"),
+        DRIVER_LICENSE_CATEGORY_B("B"),
+        DRIVER_LICENSE_CATEGORY_D("D");
+        private String driverCategory;
 
-    public Driver(String name, String driverLicense, int experience, T vehicle) {
+        DriverLicenseCategory(String driverCategory) {
+            this.driverCategory = driverCategory;
+        }
+
+        public String getDriverCategory() throws NoInformationProvided{
+
+            return driverCategory;
+        }
+
+        public void setDriverCategory(String driverCategory) {
+                this.driverCategory = driverCategory;
+        }
+        @Override
+        public String toString() {
+                return "Категория прав: " + driverCategory;
+        }
+    }
+    public Driver(String name, String driverLicense, int experience, T vehicle, DriverLicenseCategory driverLicenseCategory) throws NoInformationProvided {
         if (name == null || name.isEmpty() || name.isBlank()) {
             this.name = "default";
         } else {
@@ -27,6 +52,11 @@ public class Driver <T extends Transport>{
             this.experience = experience;
         }
         this.vehicle = vehicle;
+        if (driverLicenseCategory != null) {
+            this.driverLicenseCategory = driverLicenseCategory;
+        } else {
+            throw new NoInformationProvided("Необходимо указать тип прав!");
+        }
     }
 
         public Driver(String name) {
@@ -80,6 +110,17 @@ public class Driver <T extends Transport>{
         this.vehicle = vehicle;
     }
 
+    public DriverLicenseCategory getDriverLicenseCategory() {
+        return driverLicenseCategory;
+    }
+    public void setDriverLicenseCategory(DriverLicenseCategory driverLicenseCategory) throws NoInformationProvided{
+        if (driverLicenseCategory != null) {
+            this.driverLicenseCategory = driverLicenseCategory;
+        } else {
+            throw new NoInformationProvided("Необходимо указать тип прав!");
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -95,6 +136,6 @@ public class Driver <T extends Transport>{
 
     @Override
     public String toString() {
-        return "Водитель " + getName() + " управляет автомобилем " + getVehicle() + " и будет учавствовать в заезде.";
+        return "Водитель " + getName() + ", категория прав: " + getDriverLicenseCategory() + " управляет автомобилем " + getVehicle() + " и будет учавствовать в заезде.";
     }
 }

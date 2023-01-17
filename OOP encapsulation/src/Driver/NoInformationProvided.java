@@ -1,6 +1,6 @@
 package Driver;
 
-public class NoInformationProvided extends Exception{
+public class NoInformationProvided extends RuntimeException{
     public NoInformationProvided(String message) {
         super(message);
     }

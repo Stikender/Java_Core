@@ -2,7 +2,7 @@ package transport;
 
 import java.util.Objects;
 
-public abstract class Transport implements Competing{
+public abstract class Transport extends Object implements Competing{
 
     private final String brand;
     private final String model;
@@ -126,9 +126,9 @@ public abstract class Transport implements Competing{
 
     public abstract void printType();
 
-    public void getDiagnosed() {
-    }
+    public static void getDiagnosed() {
 
+    }
 
     //    public int getYear() {
 //        return year;

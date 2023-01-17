@@ -101,10 +101,7 @@ public class Truck extends Transport{
             System.out.println("Тип траспорта: грузовой транспорт.");
         }
     }
-
-    @Override
-    public void getDiagnosed() {
-        System.out.println("Вы проехали 7000 км, пора пройти диагностику");
-        super.getDiagnosed();
-    }
+//    public void getDiagnosed() throws IllegalArgumentException{
+//        System.out.println("Вы проехали 7000 км, пора пройти диагностику");
+//    }
 }

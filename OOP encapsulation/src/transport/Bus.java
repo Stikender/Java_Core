@@ -1,5 +1,7 @@
 package transport;
 
+import Driver.NoInformationProvided;
+
 public class Bus extends Transport{
 
     NumberOfSeats numberOfSeats;
@@ -105,6 +107,10 @@ public class Bus extends Transport{
             System.out.println("Тип траспорта: автобус");
         }
     }
+    public static void getDiagnosed() {
+            throw new UnsupportedOperationException("Автобус диагностике не подлежит");
+        }
+
     //    private int numberOfSeats;
 //
 //    public Bus(String brand, String model, String color, int year, String country, double maxSpeed, int numberOfSeats) {

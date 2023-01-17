@@ -85,8 +85,7 @@ public class Car extends Transport implements Competing{
         System.out.println("Тип траспорта: легковой транспорт.");
     }
 
-    @Override
-    public void getDiagnosed() {
+    public static void getDiagnosed() {
         System.out.println("Вы проехали 5000 км, пора пройти диагностику");
     }
     //    @Override

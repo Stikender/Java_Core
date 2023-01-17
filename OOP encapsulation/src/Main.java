@@ -10,10 +10,12 @@ import transport.Truck;
 import java.time.LocalDate;
 import java.util.Calendar;
 
+import static Driver.Driver.DriverLicenseCategory.*;
 import static transport.Car.BodyType.*;
 
 public class Main {
     public static void main(String[] args) {
+
 
 //        Flower rosa = new Flower(null, "Голландия", 35.59);
 //        Flower khrizantema = new Flower(null, null, 15,5);
@@ -40,17 +42,17 @@ public class Main {
 //        Bus bus3 = new Bus("ПАЗ", "4234", null, 2016, "Россия", 100, 18);
 //
         Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, СЕДАН, null);
-        Car bMW = new Car("BMW", "Z8", 3.0, КРОССОВЕР, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
-        Car kia = new Car("Kia", "Sportage", 2.4, ХЕТЧБЕК, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
-        Car hyundai = new Car("Hyundai", "Avante", 1.6, МИНИВЭН, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
+//        Car bMW = new Car("BMW", "Z8", 3.0, КРОССОВЕР, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
+//        Car kia = new Car("Kia", "Sportage", 2.4, ХЕТЧБЕК, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
+//        Car hyundai = new Car("Hyundai", "Avante", 1.6, МИНИВЭН, Car.VehicleType.ЛЕГКОВОЙ_АВТОМОБИЛЬ);
 
         System.out.println(audi);
-        System.out.println(bMW);
-        System.out.println(kia);
-        System.out.println(hyundai);
-        audi.printType();
-        audi.bestLapTime();
-        Driver<Car> driverCategoryB1 = new Driver<>("Петров Николай Иванович", "имеется", 10, audi);
+//        System.out.println(bMW);
+//        System.out.println(kia);
+//        System.out.println(hyundai);
+//        audi.printType();
+//        audi.bestLapTime();
+        Driver<Car> driverCategoryB1 = new Driver<>("Петров Николай Иванович", "имеется", 10, audi,DRIVER_LICENSE_CATEGORY_B);
 //        Driver<Car> driverCategoryB2 = new Driver<>("Сидоров Мамай Игнатович", "имеется", 15, bMW);
 //        Driver<Car> driverCategoryB3 = new Driver<>("Петров Григорий Константинович", "имеется", 5, kia);
 //        Driver<Car> driverCategoryB4 = new Driver<>("Ткаченко Альберт Владимирович", "имеется", 12, hyundai);
@@ -59,16 +61,18 @@ public class Main {
 //        System.out.println(driverCategoryB3);
 //        System.out.println(driverCategoryB4);
         Bus bus1 = new Bus("Asia", "Combi", 3.6, Bus.NumberOfSeats.ОСОБО_МАЛАЯ, Bus.VehicleType.АВТОБУС);
-        Bus bus2 = new Bus("Asia", "Cosmos", 3.5, Bus.NumberOfSeats.МАЛАЯ, Bus.VehicleType.АВТОБУС);
-        Bus bus3 = new Bus("ПАЗ", "4234", 3.0, Bus.NumberOfSeats.БОЛЬШАЯ, Bus.VehicleType.АВТОБУС);
-        Bus bus4 = new Bus("Вектор", "Next", 4.4,null, Bus.VehicleType.АВТОБУС);
+//        Bus bus2 = new Bus("Asia", "Cosmos", 3.5, Bus.NumberOfSeats.МАЛАЯ, Bus.VehicleType.АВТОБУС);
+//        Bus bus3 = new Bus("ПАЗ", "4234", 3.0, Bus.NumberOfSeats.БОЛЬШАЯ, Bus.VehicleType.АВТОБУС);
+//        Bus bus4 = new Bus("Вектор", "Next", 4.4,null, Bus.VehicleType.АВТОБУС);
 
         System.out.println(bus1);
-        System.out.println(bus2);
-        System.out.println(bus3);
-        System.out.println(bus4);
-        bus1.printType();
-        Driver<Bus> driverCategoryD1 = new Driver<>("Мусинов Иван Давыдович", "имеется", 2, bus1);
+//        System.out.println(bus2);
+//        System.out.println(bus3);
+//        System.out.println(bus4);
+//        bus1.printType();
+       getDiagnosed(bus1);
+//        getDiagnosed(audi,bus1);
+        Driver<Bus> driverCategoryD1 = new Driver<>("Мусинов Иван Давыдович", "имеется", 2, bus1,DRIVER_LICENSE_CATEGORY_B);
 //        Driver<Bus> driverCategoryD2 = new Driver<>("Печной Леонид Петрович", "имеется", 7, bus2);
 //        Driver<Bus> driverCategoryD3 = new Driver<>("Пеньков Василий Львович", "имеется", 17, bus3);
 //        Driver<Bus> driverCategoryD4 = new Driver<>("Васильев Владимир Владимирович", "имеется", 7, bus4);
@@ -77,17 +81,27 @@ public class Main {
 //        System.out.println(driverCategoryD3);
 //        System.out.println(driverCategoryD4);
 
-        Truck truck1 = new Truck("Shacman", "SX3318", 10.8, Truck.LoadLimit.N1, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
-        Truck truck2 = new Truck("Volvo", "FL", 7.0, Truck.LoadLimit.N2, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
-        Truck truck3 = new Truck("Hyundai", "HD78", 3.9, Truck.LoadLimit.N3, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
-        Truck truck4 = new Truck("КамАЗ", "45143", 6.7, null, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
-        System.out.println(truck1);
-        System.out.println(truck2);
-        System.out.println(truck3);
-        System.out.println(truck4);
-        truck3.printType();
-        Driver<Truck> driverCategoryC1 = new Driver<>("Пучков Мирон Игнатьевич", "имеется", 20, truck1);
-        System.out.println(driverCategoryC1);
+//        Truck truck1 = new Truck("Shacman", "SX3318", 10.8, Truck.LoadLimit.N1, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
+//        Truck truck2 = new Truck("Volvo", "FL", 7.0, Truck.LoadLimit.N2, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
+//        Truck truck3 = new Truck("Hyundai", "HD78", 3.9, Truck.LoadLimit.N3, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
+//        Truck truck4 = new Truck("КамАЗ", "45143", 6.7, null, Truck.VehicleType.ГРУЗОВОЙ_АВТОМОБИЛЬ);
+//        System.out.println(truck1);
+//        System.out.println(truck2);
+//        System.out.println(truck3);
+//        System.out.println(truck4);
+//        truck3.printType();
+//        Driver<Truck> driverCategoryC1 = new Driver<>("Пучков Мирон Игнатьевич", "имеется", 20, truck1, DRIVER_LICENSE_CATEGORY_C);
+//        System.out.println(driverCategoryC1);
+    }
+    public static void getDiagnosed(Transport... transports) {
+        for (Transport transport : transports) {
+            try {
+                Bus.getDiagnosed();
+        } catch(UnsupportedOperationException e){
+            System.out.println("Произошла ошибка диагностики");
+            System.out.println(e.getMessage());
+        }
+    }
     }
 
 //    private static void printInfoFlower(Flower flower) {
