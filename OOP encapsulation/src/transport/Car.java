@@ -8,18 +8,26 @@ public class Car extends Transport implements Competing{
     VehicleType vehicleType;
 
     public enum BodyType {
-        СЕДАН,
-        ХЕТЧБЕК,
-        КУПЕ,
-        УНИВЕРСАЛ,
-        ВНЕДОРОЖНИК,
-        КРОССОВЕР,
-        ПИКАП,
-        ФУРГОН,
-        МИНИВЭН
+        SEDAN("СЕДАН"),
+        HATCHBACK("ХЕТЧБЕК"),
+        COUPE("КУПЕ"),
+        UNIVERSAL("УНИВЕРСАЛ"),
+        SUV("ВНЕДОРОЖНИК"),
+        CROSSOVER("КРОССОВЕР"),
+        PICKUP("ПИКАП"),
+        VAN("ФУРГОН"),
+        MINIVAN("МИНИВЭН");
+        public String bodyType;
+
+        BodyType(String bodyType) {
+            this.bodyType = bodyType;
+        }
+
+        public String getBodyType() {
+            return bodyType;
+        }
     }
-    public enum VehicleType{
-        ЛЕГКОВОЙ_АВТОМОБИЛЬ
+    public enum VehicleType{PASSENGER_CAR
     }
     public Car(String brand, String model, double engineVolume, BodyType bodyType, VehicleType vehicleType) {
         super(brand, model, engineVolume);

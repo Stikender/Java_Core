@@ -8,11 +8,11 @@ public class Bus extends Transport{
     VehicleType vehicleType;
 
     public enum NumberOfSeats {
-        ОСОБО_МАЛАЯ(null,10),
-        МАЛАЯ(10,25),
-        СРЕДНЯЯ(40,50),
-        БОЛЬШАЯ(60,80),
-        ОСОБО_БОЛЬШАЯ(100,120);
+        ESPECIALLY_SMALL(null,10),
+        SMALL(10,25),
+        MIDDLE(40,50),
+        BIG(60,80),
+        ESPECIALLY_BIG(100,120);
 
         private Integer minNumberOfSeats;
         private Integer maxNumberOfSeats;
@@ -49,7 +49,7 @@ public class Bus extends Transport{
         }
     }
     public enum VehicleType{
-        АВТОБУС
+        BUS
     }
 
     public Bus(String brand, String model, double engineVolume, NumberOfSeats numberOfSeats, VehicleType vehicleType) {

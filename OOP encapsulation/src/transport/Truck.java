@@ -46,7 +46,7 @@ public class Truck extends Transport{
         }
     }
     public enum VehicleType{
-        ГРУЗОВОЙ_АВТОМОБИЛЬ
+        TRUCK
     }
     public Truck(String brand, String model, double engineVolume, LoadLimit loadLimit, VehicleType vehicleType) {
         super(brand, model, engineVolume);
