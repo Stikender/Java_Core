@@ -1,3 +1,5 @@
+package Flower;
+
 public class Flower {
 
     private String flowerColor;
