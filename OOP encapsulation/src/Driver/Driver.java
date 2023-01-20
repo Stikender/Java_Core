@@ -32,7 +32,7 @@ public class Driver <T extends Transport>{
         }
         @Override
         public String toString() {
-                return "Категория прав: " + driverCategory;
+                return driverCategory;
         }
     }
     public Driver(String name, String driverLicense, int experience, T vehicle, DriverLicenseCategory driverLicenseCategory) throws NoInformationProvided {
@@ -136,6 +136,6 @@ public class Driver <T extends Transport>{
 
     @Override
     public String toString() {
-        return "Водитель " + getName() + ", категория прав: " + getDriverLicenseCategory() + " управляет автомобилем " + getVehicle() + " и будет учавствовать в заезде.";
+        return "Водитель " + getName() + ", категория прав: " + getDriverLicenseCategory() + " управляет автомобилем " + getVehicle();
     }
 }

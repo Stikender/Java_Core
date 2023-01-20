@@ -1,16 +1,19 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public abstract class Transport extends Object implements Competing{
+public abstract class Transport extends Object implements Competing {
 
     private final String brand;
     private final String model;
-//    private String color;
+    //    private String color;
 //    private final int year;
 //    private final String country;
 //    private double maxSpeed;
     private double engineVolume;
+    private static final List<Mechanic> mechanics = new ArrayList<>();
 
     public Transport(String brand, String model, double engineVolume) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
@@ -82,6 +85,10 @@ public abstract class Transport extends Object implements Competing{
         this.engineVolume = engineVolume;
     }
 
+    public static List<Mechanic> getMechanics() {
+        return mechanics;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -97,10 +104,13 @@ public abstract class Transport extends Object implements Competing{
 
     @Override
     public String toString() {
-        return "Транспорт " + brand+ ' ' + model +
-                ", объем двигателя: " + engineVolume;
+        return "Транспорт " + getBrand() + ' ' + getModel() +
+                ", объем двигателя: " + getEngineVolume();
     }
 
+    public void addMechanic(Mechanic mechanic) {
+        mechanics.add(mechanic);
+    }
     public void startMoving() {
     }
 
@@ -111,7 +121,7 @@ public abstract class Transport extends Object implements Competing{
 
     @Override
     public String[] pitStop() {
-        return new String[] {"Остановка в месте обслуживания", "Заправка автомобиля, замена шин", "Разрешено продолжить заезд!"};
+        return new String[]{"Остановка в месте обслуживания", "Заправка автомобиля, замена шин", "Разрешено продолжить заезд!"};
     }
 
     @Override

@@ -42,7 +42,7 @@ public class Car extends Transport implements Competing{
                     ", объем двигателя — " + getEngineVolume() +
                     ", тип кузова: " + getBodyType();
         } else {
-            return "Тип: "+ getVehicleType()+ ", " + getBrand() +
+            return getVehicleType()+ ", " + getBrand() +
                     " " + getModel() +
                     ", объем двигателя — " + getEngineVolume() +
                     ", тип кузова: " + getBodyType();
