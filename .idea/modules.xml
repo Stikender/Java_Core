@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Java Core.iml" filepath="$PROJECT_DIR$/Java Core.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOP Part1/OOP Part1.iml" filepath="$PROJECT_DIR$/OOP Part1/OOP Part1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP encapsulation/OOP encapsulation.iml" filepath="$PROJECT_DIR$/OOP encapsulation/OOP encapsulation.iml" />
     </modules>
   </component>
 </project>
