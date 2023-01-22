@@ -109,7 +109,9 @@ public abstract class Transport extends Object implements Competing {
     }
 
     public void addMechanic(Mechanic mechanic) {
-        mechanics.add(mechanic);
+        if (!mechanics.contains(mechanic)) {
+            mechanics.add(mechanic);
+        }
     }
     public void startMoving() {
     }

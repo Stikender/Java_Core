@@ -41,7 +41,7 @@ public class Main {
         Bus bus1 = new Bus("Asia", "Combi", 3.6, Bus.NumberOfSeats.ESPECIALLY_SMALL, BUS);
         Bus bus2 = new Bus("Asia", "Cosmos", 3.5, Bus.NumberOfSeats.MIDDLE, BUS);
         Bus bus3 = new Bus("ПАЗ", "4234", 3.0, Bus.NumberOfSeats.BIG, BUS);
-        Bus bus4 = new Bus("Вектор", "Next", 4.4, null, BUS);
+        Bus bus4 = new Bus("Вектор", "Next", 4.4, Bus.NumberOfSeats.SMALL, BUS);
 
 //        System.out.println(bus1);
 //        System.out.println(bus2);
@@ -77,66 +77,66 @@ public class Main {
         Mechanic mechanic3 = new Mechanic("Носов Глеб", "Авторемонт", Mechanic.TransportType.ALL);
         Mechanic mechanic4 = new Mechanic("Вишняков Алексей", "ДомАвто", Mechanic.TransportType.BUS);
 
+        List<Transport> vehicle = new ArrayList<>();
+        vehicle.add(audi);
+        vehicle.add(bMW);
+        vehicle.add(kia);
+        vehicle.add(hyundai);
+        vehicle.add(bus1);
+        vehicle.add(bus2);
+        vehicle.add(bus3);
+        vehicle.add(bus4);
+        vehicle.add(truck1);
+        vehicle.add(truck2);
+        vehicle.add(truck3);
+        vehicle.add(truck4);
+        System.out.println(vehicle);
+
+        List<Driver> driver = new ArrayList<Driver>();
+        driver.add(driverCategoryB1);
+        driver.add(driverCategoryB2);
+        driver.add(driverCategoryB3);
+        driver.add(driverCategoryB4);
+        driver.add(driverCategoryC1);
+        driver.add(driverCategoryC2);
+        driver.add(driverCategoryC3);
+        driver.add(driverCategoryC4);
+        driver.add(driverCategoryD1);
+        driver.add(driverCategoryD2);
+        driver.add(driverCategoryD3);
+        driver.add(driverCategoryD4);
+        System.out.println(driver);
+
+        audi.addMechanic(mechanic1);
+        bus1.addMechanic(mechanic4);
+        truck1.addMechanic(mechanic2);
+        truck3.addMechanic(mechanic3);
+
+        for (Driver drivers : driver) {
+            System.out.println(drivers + "\n Обслуживанием автомобиля занимаются механики: \n" + Transport.getMechanics());
+        }
+
+        ServiceStation serviceStation = new ServiceStation();
+
+        serviceStation.addCarQueue(audi);
+        serviceStation.addCarQueue(bus2);
+        serviceStation.addCarQueue(truck1);
+
+        serviceStation.carryOutVehicle();
+
         Map<Transport, Mechanic> carMechanicMap = new HashMap<>();
         carMechanicMap.put(audi, mechanic1);
         carMechanicMap.put(bMW, mechanic1);
+        carMechanicMap.put(bus1, mechanic3);
         carMechanicMap.put(bus1, mechanic3);
         carMechanicMap.put(bus2, mechanic4);
         carMechanicMap.put(truck1, mechanic2);
         carMechanicMap.put(truck2, mechanic3);
 
         System.out.println(carMechanicMap);
-
 //        for (Map.Entry<Transport, Mechanic> mechanicEntry : carMechanicMap.entrySet()) {
 //            System.out.println("Ремонт трансортного средства: "+ pair.getKey() + " осуществляется механиком " + pair.getValue());
 //        }
-
-//        List<Transport> vehicle = new ArrayList<>();
-//        vehicle.add(audi);
-//        vehicle.add(bMW);
-//        vehicle.add(kia);
-//        vehicle.add(hyundai);
-//        vehicle.add(bus1);
-//        vehicle.add(bus2);
-//        vehicle.add(bus3);
-//        vehicle.add(bus4);
-//        vehicle.add(truck1);
-//        vehicle.add(truck2);
-//        vehicle.add(truck3);
-//        vehicle.add(truck4);
-//        System.out.println(vehicle);
-
-//        List<Driver> driver = new ArrayList<Driver>();
-//        driver.add(driverCategoryB1);
-//        driver.add(driverCategoryB2);
-//        driver.add(driverCategoryB3);
-//        driver.add(driverCategoryB4);
-//        driver.add(driverCategoryC1);
-//        driver.add(driverCategoryC2);
-//        driver.add(driverCategoryC3);
-//        driver.add(driverCategoryC4);
-//        driver.add(driverCategoryD1);
-//        driver.add(driverCategoryD2);
-//        driver.add(driverCategoryD3);
-//        driver.add(driverCategoryD4);
-//        System.out.println(driver);
-//
-//        audi.addMechanic(mechanic1);
-//        bus1.addMechanic(mechanic4);
-//        truck1.addMechanic(mechanic2);
-//        truck3.addMechanic(mechanic3);
-//
-//        for (Driver drivers : driver) {
-//            System.out.println(drivers + "\n Обслуживанием автомобиля занимаются механики: \n" + Transport.getMechanics());
-//        }
-//
-//        ServiceStation serviceStation = new ServiceStation();
-//
-//        serviceStation.addCarQueue(audi);
-//        serviceStation.addCarQueue(bus2);
-//        serviceStation.addCarQueue(truck1);
-//
-//        serviceStation.carryOutVehicle();
     }
 
     public static void getDiagnosed(Transport... transports) {
