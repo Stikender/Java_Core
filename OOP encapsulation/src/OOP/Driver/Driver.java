@@ -1,10 +1,8 @@
-package Driver;
+package OOP.Driver;
 
-import transport.Transport;
+import OOP.transport.Transport;
 
 import java.util.Objects;
-
-import static Driver.Driver.DriverLicenseCategory.*;
 
 public class Driver <T extends Transport>{
     private String name;

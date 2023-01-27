@@ -1,6 +1,6 @@
-package Driver;
+package OOP.Driver;
 
-import transport.Car;
+import OOP.transport.Car;
 
 public class DriverCategoryB extends Driver<Car>{
 

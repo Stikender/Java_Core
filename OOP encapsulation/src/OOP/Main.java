@@ -1,18 +1,17 @@
-import Driver.Driver;
-import Driver.DriverCategoryB;
-import Driver.DriverCategoryC;
-import Driver.DriverCategoryD;
-import transport.*;
+package OOP;
 
-import java.time.LocalDate;
+import OOP.Driver.Driver;
+import OOP.transport.*;
+import OOP.transport.*;
+
 import java.util.*;
 
-import static Driver.Driver.DriverLicenseCategory.*;
-import static transport.Bus.VehicleType.BUS;
-import static transport.Car.BodyType.*;
-import static transport.Car.VehicleType.PASSENGER_CAR;
-import static transport.Truck.LoadLimit.*;
-import static transport.Truck.VehicleType.TRUCK;
+import static OOP.Driver.Driver.DriverLicenseCategory.*;
+import static OOP.transport.Bus.VehicleType.BUS;
+import static OOP.transport.Car.BodyType.*;
+import static OOP.transport.Car.VehicleType.PASSENGER_CAR;
+import static OOP.transport.Truck.LoadLimit.*;
+import static OOP.transport.Truck.VehicleType.TRUCK;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +21,7 @@ public class Main {
         Car kia = new Car("Kia", "Sportage", 2.4, HATCHBACK, PASSENGER_CAR);
         Car hyundai = new Car("Hyundai", "Avante", 1.6, MINIVAN, PASSENGER_CAR);
 
-//        System.out.println(audi);
+        System.out.println(audi);
 //        System.out.println(bMW);
 //        System.out.println(kia);
 //        System.out.println(hyundai);

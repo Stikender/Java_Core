@@ -1,6 +1,4 @@
-package transport;
-
-import Driver.NoInformationProvided;
+package OOP.transport;
 
 public class Bus extends Transport{
 
